@@ -1,2 +1,2 @@
 # ml-tools
-re-usable ml tools for personal use
+Bucket collection of reusable machine learning implementations.
