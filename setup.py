@@ -35,5 +35,5 @@ setup(
     #
     packages=find_packages(where='ml-tools'),  # Required
     python_requires='>=3.7.*',
-    install_requires=['numpy', 'torch'],
+    install_requires=['numpy', 'torch', 'IPython', 'tqdm', 'matplotlib'],
 )
