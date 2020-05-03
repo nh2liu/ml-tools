@@ -6,7 +6,6 @@ from matplotlib import pyplot as plt
 File containing functionality related to jupyter notebook displays.
 '''
 class npi:
-    DISPLAY_ID = '__DPLY_ITER_DISPLAY__'
     '''
     Notebook plot iterator wraps around another iterator and calls
     plot_fn every `freq` timesteps.
@@ -30,9 +29,9 @@ class npi:
         if self.__i % self.freq == 0:
             self.plot_fn()
             if self.display_handle == None:
-                self.display_handle = display.display(plt.gcf(), display_id = npi.DISPLAY_ID)
+                self.display_handle = display.display(plt.gcf(), display_id = True)
             else:
-                display.update_display(plt.gcf(), display_id = npi.DISPLAY_ID)
+                self.display_handle.update(plt.gcf())
             plt.close()
         self.__i += 1
         return self.__it.__next__()
